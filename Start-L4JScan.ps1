@@ -87,7 +87,7 @@ function prerequsiteCheck {
             $wc = New-Object System.Net.WebClient
             $wc.DownloadFile("https://github.com/mergebase/log4j-detector/raw/master/log4j-detector-latest.jar",".\log4j-detector-latest.jar")
             if (Test-Path .\log4j-detector-latest.jar) {
-                Write-Output "Download Complete. Restarting Script"
+                Write-Output "Download Complete."
                 prerequsiteCheck
             } 
         } else {
@@ -103,7 +103,7 @@ function prerequsiteCheck {
             Write-Output "Downloading File..."
             $wc.DownloadFile("https://download.oracle.com/java/17/archive/jdk-17.0.1_windows-x64_bin.msi",".\jdk-17_windows-x64_bin.msi")
             if (Test-Path .\jdk-17_windows-x64_bin.msi) {
-                Write-Output "Download Complete. Restarting Script"
+                Write-Output "Download Complete."
                 prerequsiteCheck
             }
         } elseif ($downloadJDK -match 'skip') {
